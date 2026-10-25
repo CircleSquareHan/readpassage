@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Into the Wild · 伴读</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button id="tocToggle" class="icon-button" aria-label="章节目录">☰</button>
+    <div class="book-mark"><span>JON KRAKAUER</span><strong>INTO THE WILD</strong></div>
+    <div class="top-actions">
+      <button id="themeToggle" class="small-button" title="切换深色模式">☾</button>
+      <button id="panelToggle" class="small-button">注释面板</button>
+    </div>
+  </header>
+
+  <aside id="toc" class="toc" aria-label="章节目录">
+    <div class="toc-heading"><span>目录</span><button id="tocClose" class="plain-button">×</button></div>
+    <label class="search"><span>⌕</span><input id="chapterSearch" placeholder="搜索章节或标题"></label>
+    <nav id="chapterList"></nav>
+    <p class="toc-tip">阅读位置会自动保存到此浏览器。</p>
+  </aside>
+
+  <main id="reader" class="reader" tabindex="-1">
+    <article id="book" class="book" aria-live="polite"></article>
+    <footer class="pager"><button id="previous" class="nav-button">← 上一章</button><span id="progress"></span><button id="next" class="nav-button">下一章 →</button></footer>
+  </main>
+
+  <aside id="notes" class="notes" aria-label="词语注释">
+    <div class="notes-heading"><div><span class="eyebrow">词语注释</span><h2 id="lookupTerm">点击单词开始</h2></div><button id="notesClose" class="plain-button">×</button></div>
+    <div id="definition" class="definition">
+      <p>点击任意英文单词，或拖选一段英文短语。释义会显示在这里，原文不会被遮挡。</p>
+      <p class="muted">单词可优先使用内置词表；其他词语会尝试获取在线翻译。离线时仍可复制词语自行查词。</p>
+    </div>
+    <button id="copyTerm" class="copy-button" disabled>复制词语</button>
+  </aside>
+
+  <template id="loading"><div class="loading">正在整理书页…</div></template>
+  <script src="app.js"></script>
+</body>
+</html>
